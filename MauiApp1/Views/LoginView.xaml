@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Views.LoginView"
+             Title="LoginView"
+             BackgroundColor="#15171c"
+             NavigationPage.HasNavigationBar="False">
+    
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="Fill" Source="background1.jpg" Opacity="0.90"/>
+        <Grid BackgroundColor="Black" Opacity="0.70"/>
+        <Grid >
+            <Image Aspect="AspectFit"
+                   HeightRequest="120"
+                   Source="grafana_icon.png"/>            
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle 
+                Margin="-5,-30,-5,-2"
+                CornerRadius="50,50,0,0"
+                Fill="White" 
+                Opacity="0.95"/>
+            <VerticalStackLayout Padding="5" Margin="30,20,30,0" >
+                <Label FontAttributes="Bold"
+                       FontSize="Title"
+                       Text="Welcome to Gflow+"
+                       TextColor="#2D2D2D"
+                       HorizontalTextAlignment="Center" />
+                <Label Margin="0,5,0,0"
+                       FontSize="Small"
+                       Text="Log into Continue"
+                       TextColor="#1E2126"
+                       HorizontalTextAlignment="Center" />
+                <Grid Padding="5,10,10,0" Margin="0,30,0,0" ColumnDefinitions=".2*,.6*">
+                    <Label Grid.Row="0"
+                           Grid.Column="0"                          
+                           FontAttributes="Bold"
+                           FontSize="Small"
+                           Text="Username"
+                           TextColor="#2D2D2D"
+                           VerticalOptions="Center"/>
+                    <Entry x:Name="UsernameEntry"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Placeholder="Username"
+                           FontSize="Small"                           
+                           VerticalOptions="Center"/>
+                </Grid>
+                <Grid Padding="5,0,10,0" Margin="0,20,0,0" ColumnDefinitions=".2*,.6*">
+                    <Label Grid.Row="0"
+                           Grid.Column="0"                          
+                           FontAttributes="Bold"
+                           FontSize="Small"
+                           Text="Password"
+                           TextColor="#2D2D2D"
+                           VerticalOptions="Center"/>
+                    <Entry x:Name="PasswordEntry"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Placeholder="Password"
+                           IsPassword="True"
+                           FontSize="Small"
+                           VerticalOptions="Center"/>
+                    <ImageButton x:Name="BShowPassword"
+                                 Grid.Row="0"
+                                 Margin="0,0,-30,0"
+                                 HeightRequest="15"
+                                 Grid.Column="1"
+                                 Source="showpassword.png"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End"
+                                 Clicked="BShowPassword_Clicked"/>
+
+                </Grid>
+                <Grid Padding="16,0,0,0" Margin="0,0,0,0" ColumnDefinitions=".2*,.6*">
+                    <Label x:Name="StatusWrongPW"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           IsVisible="False"
+                           Margin="23,0,0,0"
+                           FontAttributes="Bold"
+                           TextColor="Red"
+                           FontSize="Micro"
+                           Text="Wrong Password. Try Again"
+                           VerticalOptions="Center"/>
+                    <ImageButton x:Name="ImageInfo"
+                           Grid.Row="0"
+                           IsVisible="False"
+                           Margin="0,0,210,0"
+                           HeightRequest="15"
+                           Grid.Column="1"
+                           Source="redinfo.png"
+                           BackgroundColor="Transparent"
+                           HorizontalOptions="End"/>
+                </Grid>
+                <Button
+                    x:Name="BLogin"
+                    Margin="0,40,0,0"
+                    BackgroundColor="Black"
+                    HeightRequest="60"
+                    Text="Login"
+                    FontAttributes="Bold"
+                    TextColor="#FBF6FD"
+                    Clicked="BLogin_Clicked"/>
+                <Label Margin="0,25,0,0"
+                       HorizontalOptions="Center"
+                       Text="Don't Know Password?"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="Micro"
+                       TextDecorations="Underline">
+                       <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="LDKPassword_Clicked" />
+                       </Label.GestureRecognizers>
+                </Label>
+                <Label x:Name="Test"
+                       Margin="0,130,0,0"
+                       HorizontalOptions="Center"
+                       FontSize="Micro"
+                       Text="Wanna try our services?"
+                       TextColor="#1E2126"/>
+                <Label Margin="0,5,0,0"
+                       HorizontalOptions="Center"
+                       FontSize="Micro"
+                       Text="About Us"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       TextDecorations="Underline">
+                       <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="LAboutUs_Clicked" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+            
+        </Grid>
+    </Grid>
+    
+</ContentPage>
